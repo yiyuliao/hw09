@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<style type="text/css">
+.tips{
+	display:inline-block;
+	padding:3px 8px;
+	border:1px solid #b9b8b8;
+	margin-right:10px;
+}
+    
+</style>
+
+<body>
+    
+<script src="https://code.jquery.com/jquery-1.6.4.js"></script>
+
+<script>
+$().ready(function(){
+  var tipColor=['red','yellow','blue','green'];
+  
+  function matchLevel(password){
+    if(password.length===0){
+        return -1;
+    }
+	else if(password.length>=1&&password.length<4){
+		return 0;
+	}
+	else if(password.length>=4&&password.length<8){
+		return 1;
+	}
+	else if(password.length>=8&&password.length<12){
+		return 2;
+	}
+	else{
+		return 3;
+	}
+  }
+
+  $("#password>input").keyup(function(){
+  
+    var pass = $(this).val();
+    var level = matchLevel(pass);
+    if(level>=0){
+      $(".tips[level='0']").css("background", tipColor[0]);
+    }
+    else{
+      $(".tips[level='0']").css("background", "");
+    }
+    if(level>=1){
+      $(".tips[level='1']").css("background", tipColor[1]);
+    }
+    else{
+      $(".tips[level='1']").css("background", "");
+    }
+    if(level>=2){
+      $(".tips[level='2']").css("background", tipColor[2]);
+    }
+    else{
+      $(".tips[level='2']").css("background", "");
+    }
+    if(level>=3){
+      $(".tips[level='3']").css("background", tipColor[3]);
+    }
+    else{
+      $(".tips[level='3']").css("background", "");
+    }
+      
+  });
+
+
+});
+
+</script>
+
+<div id="password">
+密碼：<input type="password">
+<br>
+密碼強度：
+<span class="tips" level="0"></span>
+<span class="tips" level="1"></span>
+<span class="tips" level="2"></span>
+<span class="tips" level="3"></span>
+ </p>
+</div>
+
+
+</body>
+</html>

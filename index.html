@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<style type="text/css">
+    .tip{
+     display:none;
+        
+    }
+    
+</style>
+
+<body>
+    
+<script src="https://code.jquery.com/jquery-1.6.4.js"></script>
+<script>
+    
+$().ready(function(){
+$("input").mouseover(function(){
+$(".tip").css("display","block");});
+
+$("input").mouseout(function(){
+$(".tip").css("display","none");});
+})
+
+</script>
+    
+
+    <input type="text"></input>
+    <div class="tip">This is a tooltip!</div>
+
+</body>
+</html>

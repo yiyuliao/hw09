@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script src="https://code.jquery.com/jquery-1.6.4.js"></script>
+    
+<style type="text/css">
+.go-board{
+  font-size: 20px;
+  background-image: url('chess.jpg');
+  width: 20em;
+  height: 20em;
+  background-size: cover;
+}
+    .row{
+  margin-left:.75em;
+}
+.row:first-child .col{
+  margin-top:.75em;
+}
+
+.col{
+  width:1.5em;
+  height:1.5em;  
+  display:inline-block;
+  margin: .14em .12em;  
+  box-shadow: 1px 2px 10px #888;
+  border-radius: 50%;
+  visibility: hidden;
+} 
+.white{
+  border: 1px solid #ccc;
+  background: linear-gradient(#fff,#eee);
+}
+.black{
+  border: 1px solid #000;  
+  background: linear-gradient(#777, #000);
+}
+
+.col{
+  visibility: visible;
+  border: 1px solid transparent;
+}
+    
+</style>
+    
+</head>
+
+<body>
+
+
+<script>
+$().ready(function(){
+  var color = "white";
+  $(".col").css("opacity","0");
+  $(".hint").text("現在該"+color+"下");
+  
+  $(".col").click(function(){
+    $(this).css("opacity","1");
+    $(this).addClass(color);
+  if(color==="white"){
+color="black";
+}
+else{
+color="white";
+}
+$(".hint").text("現在該"+color+"下");  
+  });
+  
+  $("#restart").click(function(){
+$(".col").css("opacity","0");
+color="white";
+$(".hint").text("現在該"+color+"下");  
+    $(".col").removeClass("white");
+    $(".col").removeClass("black");
+  });
+});
+</script>
+
+<input type="button" value="重新開始" id="restart">
+<div class="go-board">
+  <div class="row r1">
+    <div class="col c1"></div>
+    <div class="col c2"></div>
+    <div class="col c3"></div>
+    <div class="col c4"></div>
+    <div class="col c5"></div>
+    <div class="col c6"></div>
+    <div class="col c7"></div>
+    <div class="col c8"></div>
+    <div class="col c9"></div>
+  </div>
+  <div class="row r2">
+    <div class="col c1"></div>
+    <div class="col c2"></div>
+    <div class="col c3"></div>
+    <div class="col c4"></div>
+    <div class="col c5"></div>
+    <div class="col c6"></div>
+    <div class="col c7"></div>
+    <div class="col c8"></div>
+    <div class="col c9"></div>
+  </div>
+  <div class="row r3">
+    <div class="col c1"></div>
+    <div class="col c2"></div>
+    <div class="col c3"></div>
+    <div class="col c4"></div>
+    <div class="col c5"></div>
+    <div class="col c6"></div>
+    <div class="col c7"></div>
+    <div class="col c8"></div>
+    <div class="col c9"></div>
+  </div>
+  <div class="row r4">
+    <div class="col c1"></div>
+    <div class="col c2"></div>
+    <div class="col c3"></div>
+    <div class="col c4"></div>
+    <div class="col c5"></div>
+    <div class="col c6"></div>
+    <div class="col c7"></div>
+    <div class="col c8"></div>
+    <div class="col c9"></div>
+  </div>
+  <div class="row r5">
+    <div class="col c1"></div>
+    <div class="col c2"></div>
+    <div class="col c3"></div>
+    <div class="col c4"></div>
+    <div class="col c5"></div>
+    <div class="col c6"></div>
+    <div class="col c7"></div>
+    <div class="col c8"></div>
+    <div class="col c9"></div>
+  </div>
+  <div class="row r6">
+    <div class="col c1"></div>
+    <div class="col c2"></div>
+    <div class="col c3"></div>
+    <div class="col c4"></div>
+    <div class="col c5"></div>
+    <div class="col c6"></div>
+    <div class="col c7"></div>
+    <div class="col c8"></div>
+    <div class="col c9"></div>
+  </div>
+  <div class="row r7">
+    <div class="col c1"></div>
+    <div class="col c2"></div>
+    <div class="col c3"></div>
+    <div class="col c4"></div>
+    <div class="col c5"></div>
+    <div class="col c6"></div>
+    <div class="col c7"></div>
+    <div class="col c8"></div>
+    <div class="col c9"></div>
+  </div>
+  <div class="row r8">
+    <div class="col c1"></div>
+    <div class="col c2"></div>
+    <div class="col c3"></div>
+    <div class="col c4"></div>
+    <div class="col c5"></div>
+    <div class="col c6"></div>
+    <div class="col c7"></div>
+    <div class="col c8"></div>
+    <div class="col c9"></div>
+  </div>
+  <div class="row r9">
+    <div class="col c1"></div>
+    <div class="col c2"></div>
+    <div class="col c3"></div>
+    <div class="col c4"></div>
+    <div class="col c5"></div>
+    <div class="col c6"></div>
+    <div class="col c7"></div>
+    <div class="col c8"></div>
+    <div class="col c9"></div>
+  </div>
+</div>
+
+</body>
+</html>
